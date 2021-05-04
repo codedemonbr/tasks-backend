@@ -11,7 +11,7 @@ module.exports = (app) => {
             .where("estimateAt", "<=", date)
             .orderBy("estimateAt")
             .then((tasks) => res.json(tasks))
-            .catch((err) => res.status(500).json(err));
+            .catch((err) => res.status(400).json(err));
     };
 
     const save = (req, res) => {
@@ -20,10 +20,11 @@ module.exports = (app) => {
         }
 
         req.body.userId = req.user.id;
+        console.log("no save " + req.body.desc + " " + req.body.estimateAt);
 
         app.db("tasks")
             .insert(req.body)
-            .then((_) => res.status(400).send())
+            .then((_) => res.status(204).send())
             .catch((err) => res.status(400).json(err));
     };
 
@@ -35,10 +36,36 @@ module.exports = (app) => {
                 if (rowsDeleted > 0) {
                     res.status(204).send();
                 } else {
-                    const msg = `Não doi encontrada task com id ${req.params.id}`;
+                    const msg = `Não foi encontrada task com id ${req.params.id}.`;
                     res.status(400).send(msg);
                 }
             })
-            .catch((err) => res.status(400).json());
+            .catch((err) => res.status(400).json(err));
     };
+
+    const updateTaskDoneAt = (req, res, doneAt) => {
+        app.db("tasks")
+            .where({ id: req.params.id, userId: req.user.id })
+            .update({ doneAt })
+            .then((_) => res.status(204).send())
+            .catch((err) => res.status(400).json(err));
+    };
+
+    const toggleTask = (req, res) => {
+        app.db("tasks")
+            .where({ id: req.params.id, userId: req.user.id })
+            .first()
+            .then((task) => {
+                if (!task) {
+                    const msg = `Task com id ${req.params.id} não encontrada.`;
+                    return res.status(400).send(msg);
+                }
+
+                const doneAt = task.doneAt ? null : new Date();
+                updateTaskDoneAt(req, res, doneAt);
+            })
+            .catch((err) => res.status(400).json(err));
+    };
+
+    return { getTasks, save, remove, toggleTask };
 };

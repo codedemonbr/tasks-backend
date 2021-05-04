@@ -16,11 +16,15 @@ module.exports = (app) => {
             .then((user) => {
                 if (user) {
                     done(null, { id: user.id, email: user.email });
+                    console.log(
+                        "user no passport" + user.id + " " + user.email
+                    );
                 } else {
                     done(null, false);
                 }
             })
             .catch((err) => done(err, false));
+        // console.log("user no passport" + user);
     });
 
     passport.use(strategy);

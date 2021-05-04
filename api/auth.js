@@ -10,15 +10,23 @@ module.exports = (app) => {
 
         const user = await app
             .db("users")
-            .where({ email: req.body.email })
+            .whereRaw("LOWER(email) = LOWER(?)", req.body.email)
             .first();
 
+        // .where({ email: req.body.email })
         if (user) {
             bcrypt.compare(req.body.password, user.password, (err, isMatch) => {
                 if (err || !isMatch) {
-                    return res.status(400).send();
+                    return res
+                        .status(401)
+                        .send("A senha informada é inválida!");
                 }
-                const payload = { id: user.id };
+                const payload = {
+                    id: user.id,
+                    name: user.name,
+                    email: user.email,
+                };
+                console.log(payload);
                 res.json({
                     name: user.name,
                     email: user.email,

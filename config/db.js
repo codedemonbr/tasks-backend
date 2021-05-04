@@ -1,4 +1,4 @@
-const config = require("../knexfile"); //ver se é necessário colocar o .js
+const config = require("../knexfile.js");
 const knex = require("knex")(config);
 
 knex.migrate.latest([config]);
