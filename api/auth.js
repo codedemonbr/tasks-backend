@@ -25,7 +25,7 @@ module.exports = (app) => {
                     name: user.name,
                     email: user.email,
                 };
-                console.log(payload);
+
                 res.json({
                     name: user.name,
                     email: user.email,

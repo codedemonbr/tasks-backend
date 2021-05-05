@@ -5,7 +5,6 @@ module.exports = (app) => {
         const date = req.query.date
             ? req.query.date
             : moment().endOf("day").toDate();
-        
 
         app.db("tasks")
             .where({ userId: req.user.id })
@@ -21,7 +20,6 @@ module.exports = (app) => {
         }
 
         req.body.userId = req.user.id;
-        console.log("no save " + req.body.desc + " " + req.body.estimateAt);
 
         app.db("tasks")
             .insert(req.body)

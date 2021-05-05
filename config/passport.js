@@ -16,9 +16,6 @@ module.exports = (app) => {
             .then((user) => {
                 if (user) {
                     done(null, { id: user.id, email: user.email });
-                    console.log(
-                        "user no passport" + user.id + " " + user.email
-                    );
                 } else {
                     done(null, false);
                 }
