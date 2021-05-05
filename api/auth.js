@@ -13,7 +13,6 @@ module.exports = (app) => {
             .whereRaw("LOWER(email) = LOWER(?)", req.body.email)
             .first();
 
-        // .where({ email: req.body.email })
         if (user) {
             bcrypt.compare(req.body.password, user.password, (err, isMatch) => {
                 if (err || !isMatch) {

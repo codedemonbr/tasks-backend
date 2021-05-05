@@ -24,7 +24,6 @@ module.exports = (app) => {
                 }
             })
             .catch((err) => done(err, false));
-        // console.log("user no passport" + user);
     });
 
     passport.use(strategy);
