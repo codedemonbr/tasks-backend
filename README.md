@@ -1,7 +1,37 @@
+<h1 align="center">
+    Tasks - Backend
+</h1>
+<p align="center">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/codedemonbr/tasks-backend">
+
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/codedemonbr/tasks-backend">
+
+  <a href="https://www.codacy.com/gh/codedemonbr/tasks-backend/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=codedemonbr/tasks-backend&amp;utm_campaign=Badge_Grade">
+    <img src="https://app.codacy.com/project/badge/Grade/1f8b30a499ce412f98fa085a579998f5"/>
+  </a>
+
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/codedemonbr/tasks-backend">
+
+  <a href="https://github.com/codedemonbr/tasks-backend/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/codedemonbr/tasks-backend">
+  </a>
+
+  <a href="https://github.com/codedemonbr/tasks-backend/issues">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/codedemonbr/tasks-backend">
+  </a>
+
+  <img alt="License" src="https://img.shields.io/github/license/codedemonbr/tasks-backend">
+</p>
+
+<!-- Index -->
+
 <p align="center">
   <a href="#rocket-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#information_source-how-to-use">How To Use</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#minidisc-database-connection">Database Connection</a>
+  <a href="#minidisc-database-connection">Database Connection</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#link-testing-connections">Testing Connections</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#card_index-my-contacts">My Contacts</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-License">License</a>
 </p>
 
 ## :rocket: Technologies
@@ -21,6 +51,15 @@ This project was developed at the [Cod3r React Native's](https://www.cod3r.com.b
 
 ## :information_source: How to use
 
+First of all create a **_.env_** file in your root directory.  
+As model below:
+
+```javascript
+module.exports = {
+    authSecret: "insert here your key, something like : !@#$1234&%$425!@$*&",
+};
+```
+
 ```bash
     #Clone repository
     $ git clone git@github.com:codedemonbr/tasks-backend.git
@@ -39,6 +78,8 @@ This project was developed at the [Cod3r React Native's](https://www.cod3r.com.b
     npm start
 
 ```
+
+Use [Node.js v14.15][nodejs] or higher.
 
 ## :minidisc: Database connection
 
@@ -111,6 +152,7 @@ module.exports = {
     "name": "Thiago Henrique dos Santos",
     "email": "henrique.thsantos.ths@gmail.com",
     "github": "https://github.com/codedemonbr",
+    "linkedin": "www.linkedin.com/in/codedemonbr",
     "phones": [
         {
             "sp_phone": "+5511986082341"
@@ -121,3 +163,13 @@ module.exports = {
     ]
 }
 ```
+
+## :memo: License
+
+This project is under the MIT license. See the [LICENSE](https://github.com/codedemonbr/tasks-backend/blob/master/LICENSE) for more information.
+
+---
+
+Made with inner :fire: by Thiago Henrique dos Santos :wave: [Get in touch!](www.linkedin.com/in/codedemonbr)
+
+[nodejs]: https://nodejs.org/
