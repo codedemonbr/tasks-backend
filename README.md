@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="#rocket-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#information_source-how-to-use">How To Use</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#minidisc-database-connection">Database Connection</a>
+</p>
+
 ## :rocket: Technologies
 
 This project was developed at the [Cod3r React Native's](https://www.cod3r.com.br/courses/reactnative?ref=5b9a95) course with the following technologies:
@@ -62,7 +68,7 @@ module.exports = {
 
 ## :link: Testing connections
 
- :link: Signup User:
+:link: Signup User:
 
 <p align="center">
   <img alt="Signup User" src="https://res.cloudinary.com/codedemonbr/image/upload/v1620230902/signupUser_nrhbqs.gif">
@@ -91,7 +97,6 @@ module.exports = {
 <p align="center">
   <img alt="Delete Task" src="https://res.cloudinary.com/codedemonbr/image/upload/v1620231218/deleteTask_a7ssx6.gif">
 </p>
-
 
 :link: Toggle Task:
 
