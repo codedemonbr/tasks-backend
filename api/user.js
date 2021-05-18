@@ -13,8 +13,8 @@ module.exports = (app) => {
 
             app.db("users")
                 .insert({
-                    name: req.body.name,
-                    email: req.body.email.toLowerCase(),
+                    name: req.body.name.trim(),
+                    email: req.body.email.toLowerCase().trim(),
                     password,
                 })
                 .then((_) => res.status(204).send())
