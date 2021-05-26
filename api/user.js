@@ -6,6 +6,13 @@ module.exports = (app) => {
             bcrypt.hash(password, salt, null, (err, hash) => callback(hash));
         });
     };
+    /**
+     * 
+     * @param {*} req 
+     * @param {*} res
+     * Metodo save usado para signup, ou seja criar um usuário no banco
+     *  
+     */
 
     const save = (req, res) => {
         obterHash(req.body.password, (hash) => {
