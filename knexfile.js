@@ -13,3 +13,6 @@ module.exports = {
         tableName: "knex_migrations",
     },
 };
+/**
+ * Esse arquivo tem as configurações no knex para manipular o banco de dados
+ */
